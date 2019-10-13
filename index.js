@@ -64,32 +64,32 @@ function handleMessageEvent(event) {
 
     let eventText = event.message.text.toLowerCase();
 
-    if (eventText === 'ขอที่อยู่') {
+    if (eventText === 'ที่อยู่') {
         msg = {
             'type': 'text',
-            text: '55555555'
+            text: 'ถนนเพชรเกษม 68 แยก29 ถนนเพชรเกษม แขวงบางแคเหนือ เขตบางแค กรุงเทพมหานคร 10160'
         }
-    } else if (eventText === 'สอบถาม') {
+    } else if (eventText === 'เบอร์ติดต่อบริษัท') {
         // console.dir();
         msg = {
-            'type': 'text',
+            'type': '028043352-4',
             text: query.MSG
         }
-    }  else if (eventText === 'สอบถามหน่อยครับ') {
+    }  else if (eventText === 'ติดต่อฝ่ายการตลาด') {
         msg = {
-            'type': 'text',
-            text: query.MSG
-
-        }
-    } else if (eventText === 'สอบถามหน่อยค่ะ') {
-        msg = {
-            'type': 'text',
+            'type': '0816479494 คุณติ๋ม',
             text: query.MSG
 
         }
-    } else if (eventText === 'ถามไรหน่อย') {
+    } else if (eventText === 'ที่อยู่อีเมลของบริษัท') {
         msg = {
-            'type': 'text',
+            'type': 'akpack@hotmail.com',
+            text: query.MSG
+
+        }
+    } else if (eventText === 'แฟกซ์ของบริษัท') {
+        msg = {
+            'type': '028043351',
             text: query.MSG
 
         }
@@ -100,18 +100,43 @@ function handleMessageEvent(event) {
         }
     } else if (eventText === 'สวัสดีค่ะ') {
         msg = {
-            'type': 'text',
+            'type': 'สวัสดี',
             text: query.MSG
 
         }
     } else if (eventText === 'สวัสดี') {
         msg = {
-            'type': 'text',
+            'type': 'สวัสดี',
             text: query.MSG
         }
     } else if (eventText === 'หวัดดี') {
         msg = {
-            'type': 'text',
+            'type': 'สวัสดี',
+            text: query.MSG
+
+        }
+    }
+    else if (eventText === 'Facebook ของบริษัท') {
+        msg = {
+            'type': 'https://web.facebook.com/AK-Pack-and-Machinery-CoLtd-156593197861817/?hc_ref=ARTgW3JAvJwxE2lNLbF6W_oBTQXUC1soqCrIFfQCfCRoqcdLB7rnGXD1fJFFtDiSc8c&fref=nf&__xts__%5B0%5D=68.ARDbXcWfZYqoDgqf8gG9J2GCi1RQ1IIo5y4ifKGtJNbgYhfE7emTiCaXb-fqhd0SNP2jvqlVSqCwQPoO9bXmuhUkCjKfLlowITIgpGUARZKGYVVWXoAZMFsYY_rgq8hsxiUa_LT8CrzBv7SBp8_Y-v6DOpcIOAK1WsTugG1LZj-7xBwbTMx7bk6q5lpLw35ojaUroDs6T35a5XBfX7qXAEsTLLJbo7-dtv8SnvLbRtlJTsjcusy3xEJtjbRtalyOu-dbYG8GDkrpwg4pXDsX3sp-TeFJSC7atkYjkMKMMpbZo3RKnL8hRLxFKqe0fgqLYd7RSJbvuhknv99zqv7mJaQ&__tn__=kC-R&_rdc=1&_rdr',
+            text: query.MSG
+
+        }
+    }else if (eventText === 'เว็บไซต์ของบริษัท') {
+        msg = {
+            'type': 'http://www.industry.co.th/t1/facility.php?uid=37053',
+            text: query.MSG
+
+        }
+    }else if (eventText === 'หวัดดี') {
+        msg = {
+            'type': 'สวัสดี',
+            text: query.MSG
+
+        }
+    }else if (eventText === 'หวัดดี') {
+        msg = {
+            'type': 'สวัสดี',
             text: query.MSG
 
         }
