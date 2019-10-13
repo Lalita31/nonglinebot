@@ -73,41 +73,41 @@ function handleMessageEvent(event) {
         // console.dir();
         msg = {
             'type': 'text',
-            text: 028043352-4
+            text: '028043352-4'
         }
     }  else if (eventText === 'ติดต่อฝ่ายการตลาด') {
         msg = {
             'type': 'text',
-            text: 0816479494 คุณติ๋ม
+            text: '0816479494 คุณติ๋ม'
 
         }
     } else if (eventText === 'ที่อยู่อีเมลของบริษัท') {
         msg = {
             'type': 'text',
-            text: akpack@hotmail.com
+            text:'akpack@hotmail.com'
 
         }
     } else if (eventText === 'แฟกซ์ของบริษัท') {
         msg = {
             'type': 'text',
-            text: 028043351
+            text:'028043351'
 
         }
     } else if (eventText === 'สวัสดีครับ') {
         msg = {
             'type': 'text',
-            text: สวัสดี
+            text:'สวัสดี'
         }
     } else if (eventText === 'สวัสดีค่ะ') {
         msg = {
             'type': 'text',
-            text: สวัสดี
+            text:'สวัสดี'
 
         }
     } else if (eventText === 'สวัสดี') {
         msg = {
             'type': 'text',
-            text: สวัสดี
+            text:'สวัสดี'
         }
     } else if (eventText === 'หวัดดี') {
         msg = {
@@ -119,13 +119,13 @@ function handleMessageEvent(event) {
     else if (eventText === 'Facebook ของบริษัท') {
         msg = {
             'type': 'text',
-            text: https://web.facebook.com/AK-Pack-and-Machinery-CoLtd-156593197861817/?hc_ref=ARTgW3JAvJwxE2lNLbF6W_oBTQXUC1soqCrIFfQCfCRoqcdLB7rnGXD1fJFFtDiSc8c&fref=nf&__xts__%5B0%5D=68.ARDbXcWfZYqoDgqf8gG9J2GCi1RQ1IIo5y4ifKGtJNbgYhfE7emTiCaXb-fqhd0SNP2jvqlVSqCwQPoO9bXmuhUkCjKfLlowITIgpGUARZKGYVVWXoAZMFsYY_rgq8hsxiUa_LT8CrzBv7SBp8_Y-v6DOpcIOAK1WsTugG1LZj-7xBwbTMx7bk6q5lpLw35ojaUroDs6T35a5XBfX7qXAEsTLLJbo7-dtv8SnvLbRtlJTsjcusy3xEJtjbRtalyOu-dbYG8GDkrpwg4pXDsX3sp-TeFJSC7atkYjkMKMMpbZo3RKnL8hRLxFKqe0fgqLYd7RSJbvuhknv99zqv7mJaQ&__tn__=kC-R&_rdc=1&_rdr',
+            text: 'https://web.facebook.com/AK-Pack-and-Machinery-CoLtd-156593197861817/?hc_ref=ARTgW3JAvJwxE2lNLbF6W_oBTQXUC1soqCrIFfQCfCRoqcdLB7rnGXD1fJFFtDiSc8c&fref=nf&__xts__%5B0%5D=68.ARDbXcWfZYqoDgqf8gG9J2GCi1RQ1IIo5y4ifKGtJNbgYhfE7emTiCaXb-fqhd0SNP2jvqlVSqCwQPoO9bXmuhUkCjKfLlowITIgpGUARZKGYVVWXoAZMFsYY_rgq8hsxiUa_LT8CrzBv7SBp8_Y-v6DOpcIOAK1WsTugG1LZj-7xBwbTMx7bk6q5lpLw35ojaUroDs6T35a5XBfX7qXAEsTLLJbo7-dtv8SnvLbRtlJTsjcusy3xEJtjbRtalyOu-dbYG8GDkrpwg4pXDsX3sp-TeFJSC7atkYjkMKMMpbZo3RKnL8hRLxFKqe0fgqLYd7RSJbvuhknv99zqv7mJaQ&__tn__=kC-R&_rdc=1&_rdr',
 
         }
     }else if (eventText === 'เว็บไซต์ของบริษัท') {
         msg = {
             'type': 'text',
-            text: http://www.industry.co.th/t1/facility.php?uid=37053
+            text: 'http://www.industry.co.th/t1/facility.php?uid=37053'
 
         }
     }else if (eventText === 'หวัดดี') {
@@ -174,90 +174,91 @@ function handleMessageEvent(event) {
             'text':data.id
         }
         
-    } else if (eventText === 'ทุนวิจัย') {
-        msg = {
-            'type': 'text',
-            text: capital.MSG
+     } 
+    //  else if (eventText === 'ทุนวิจัย') {
+    //     msg = {
+    //         'type': 'text',
+    //         text: capital.MSG
 
-        }
-    } else if (eventText === 'ขอรายละเอียดทุนวิจัย') {
-        msg = {
-            'type': 'text',
-            text: capital.MSG1
+    //     }
+    // } else if (eventText === 'ขอรายละเอียดทุนวิจัย') {
+    //     msg = {
+    //         'type': 'text',
+    //         text: capital.MSG1
 
-        }
-    } else if (eventText === 'ทุนวิจัย2564') {
-        msg = {
-            'type': 'text',
-            text: capital.MSG2
+    //     }
+    // } else if (eventText === 'ทุนวิจัย2564') {
+    //     msg = {
+    //         'type': 'text',
+    //         text: capital.MSG2
 
-        }
-    } else if (eventText === 'ทุนวิจัย2563') {
-        msg = {
-            'type': 'text',
-            text: capital.MSG3
+    //     }
+    // } else if (eventText === 'ทุนวิจัย2563') {
+    //     msg = {
+    //         'type': 'text',
+    //         text: capital.MSG3
 
-        }
-    } else if (eventText === 'เบิกเงินวิจัย') {
-        msg = {
-            'type': 'text',
-            text: withdraw.MSG
-        }
-    } else if (eventText === 'ขอรายละเอียดเบิกเงินวิจัย') {
-        msg = {
-            'type': 'text',
-            text: withdraw.MSG1
+    //     }
+    // } else if (eventText === 'เบิกเงินวิจัย') {
+    //     msg = {
+    //         'type': 'text',
+    //         text: withdraw.MSG
+    //     }
+    // } else if (eventText === 'ขอรายละเอียดเบิกเงินวิจัย') {
+    //     msg = {
+    //         'type': 'text',
+    //         text: withdraw.MSG1
 
-        }
-    } else if (eventText === 'เบิกเงินงวดที่1') {
-        msg = {
-            'type': 'text',
-            text: withdraw.MSG2
+    //     }
+    // } else if (eventText === 'เบิกเงินงวดที่1') {
+    //     msg = {
+    //         'type': 'text',
+    //         text: withdraw.MSG2
 
-        }
-    } else if (eventText === 'เบิกเงินงวดที่2') {
-        msg = {
-            'type': 'text',
-            text: withdraw.MSG3
+    //     }
+    // } else if (eventText === 'เบิกเงินงวดที่2') {
+    //     msg = {
+    //         'type': 'text',
+    //         text: withdraw.MSG3
 
-        }
-    } else if (eventText === 'เบิกเงินงวดที่3') {
-        msg = {
-            'type': 'text',
-            text: withdraw.MSG4
+    //     }
+    // } else if (eventText === 'เบิกเงินงวดที่3') {
+    //     msg = {
+    //         'type': 'text',
+    //         text: withdraw.MSG4
 
-        }
-    } else if (eventText === 'กองทุนสนับสนุนงานวิจัย') {
-        msg = {
-            'type': 'text',
-            text: fund.MSG
+    //     }
+    // } else if (eventText === 'กองทุนสนับสนุนงานวิจัย') {
+    //     msg = {
+    //         'type': 'text',
+    //         text: fund.MSG
 
-        }
-    } else if (eventText === 'คุยกับบอท') {
-        msg = {
-            'type': 'text',
-            text: 'สวัสดีค่ะท่านสามารถสอบถามเกี่ยวกับ\n-ทุนวิจัย\n-เบิกเงินวิจัย\n-กองทุนสนับสนุนงานวิจัย\n-เอกสารดาวน์โหลด\n' +
-                'ท่านสามารถดูรายละเอียดโดยการพิมพ์ขอรายละเอียดแต่ละหัวข้อกับน้องบอทได้ เช่น ทุนวิจัย เป็นต้น'
+    //     }
+    // } else if (eventText === 'คุยกับบอท') {
+    //     msg = {
+    //         'type': 'text',
+    //         text: 'สวัสดีค่ะท่านสามารถสอบถามเกี่ยวกับ\n-ทุนวิจัย\n-เบิกเงินวิจัย\n-กองทุนสนับสนุนงานวิจัย\n-เอกสารดาวน์โหลด\n' +
+    //             'ท่านสามารถดูรายละเอียดโดยการพิมพ์ขอรายละเอียดแต่ละหัวข้อกับน้องบอทได้ เช่น ทุนวิจัย เป็นต้น'
 
-        }
-    } else if (eventText === 'สามารถติดต่อได้ทางไหนบ้าง') {
-        msg = {
-            'type': 'text',
-            text: 'สวัสดีค่ะท่านสามารถติดต่อ สถาบันวิจัยและพัฒนา มทร.รัตนโกสินทร์ ได้ตามช่องทางการติดต่อด้านล่างนี้\nFacebook : https://www.facebook.com/irdrmutr\nWebsite : https://ird.rmutr.ac.th\nEmail : ird.r@rmutr.ac.th , irdrmutr@hotmail.co.th\nสามารถติดต่อได้ที่ 02-441-6060 ต่อ 2420-2426'
+    //     }
+    // } else if (eventText === 'สามารถติดต่อได้ทางไหนบ้าง') {
+    //     msg = {
+    //         'type': 'text',
+    //         text: 'สวัสดีค่ะท่านสามารถติดต่อ สถาบันวิจัยและพัฒนา มทร.รัตนโกสินทร์ ได้ตามช่องทางการติดต่อด้านล่างนี้\nFacebook : https://www.facebook.com/irdrmutr\nWebsite : https://ird.rmutr.ac.th\nEmail : ird.r@rmutr.ac.th , irdrmutr@hotmail.co.th\nสามารถติดต่อได้ที่ 02-441-6060 ต่อ 2420-2426'
 
-        }
-    } else if (eventText === 'เอกสารดาวน์โหลด') {
-        msg = {
-            'type': 'text',
-            text: 'สวัสดีค่ะท่านสามารถดาวน์โหลดเอกสารต่างๆได้ในลิงค์ด้านล่างนี้\nhttps://ird.rmutr.ac.th/formdownload/ '
+    //     }
+    // } else if (eventText === 'เอกสารดาวน์โหลด') {
+    //     msg = {
+    //         'type': 'text',
+    //         text: 'สวัสดีค่ะท่านสามารถดาวน์โหลดเอกสารต่างๆได้ในลิงค์ด้านล่างนี้\nhttps://ird.rmutr.ac.th/formdownload/ '
 
-        }
-    }  
+    //     }
+    // }  
     else {
         
         msg = {
             type: 'text',
-            text: 'น้องบอทสามารถตอบคำถามเกี่ยวกับ\n-ทุนวิจัย\n-เบิกเงินวิจัย\n-กองทุนสนับสนุนงานวิจัย\n-เอกสารดาวน์โหลด'
+            text: 'น้องบอทสามารถตอบคำถามเกี่ยวกับ\ที่อยู่\เบอร์ติดต่อ\เบอร์ติดต่อการตลาด\อีเมล\เว็บไซต์\facebook\แฟกซ์\ติดต่อภายใน'
         };
         if (eventText!== "hello, world" && eventText!== null) {
             db.all("INSERT INTO  question(question) VALUES(?)", [eventText], (err) => {
