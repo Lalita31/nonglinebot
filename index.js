@@ -67,7 +67,7 @@ function handleMessageEvent(event) {
     if (eventText === 'ขอที่อยู่') {
         msg = {
             'type': 'text',
-            text: address.MSG
+            text: '55555555'
         }
     } else if (eventText === 'สอบถาม') {
         // console.dir();
