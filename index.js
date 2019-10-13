@@ -128,18 +128,6 @@ function handleMessageEvent(event) {
             text: 'http://www.industry.co.th/t1/facility.php?uid=37053'
 
         }
-    }else if (eventText === 'หวัดดี') {
-        msg = {
-            'type': 'สวัสดี',
-            text: query.MSG
-
-        }
-    }else if (eventText === 'หวัดดี') {
-        msg = {
-            'type': 'สวัสดี',
-            text: query.MSG
-
-        }
     }
     else if (eventText === 'report') {
 
