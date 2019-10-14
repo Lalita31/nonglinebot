@@ -67,30 +67,31 @@ function handleMessageEvent(event) {
     if (eventText === 'ที่อยู่') {
         msg = {
             'type': 'text',
-            text: 'ถนนเพชรเกษม 68 แยก29 ถนนเพชรเกษม แขวงบางแคเหนือ เขตบางแค กรุงเทพมหานคร 10160'
+            text: 'ที่อยู่ของบริษัท\nถนนเพชรเกษม 68 แยก29 ถนนเพชรเกษม แขวงบางแคเหนือ เขตบางแค กรุงเทพมหานคร 10160'
         }
     } else if (eventText === 'เบอร์ติดต่อบริษัท') {
         // console.dir();
         msg = {
             'type': 'text',
-            text: '028043352-4'
+            text: 'เบอร์ติดต่อบริษัท\n028043352-4'
         }
     }  else if (eventText === 'ติดต่อฝ่ายการตลาด') {
         msg = {
             'type': 'text',
-            text: '0816479494 คุณติ๋ม'
+            text: 'เบอร์ติดต่อฝ่ายการตลาด\n-0816479494 คุณติ๋ม'
 
         }
-    } else if (eventText === 'ที่อยู่อีเมลของบริษัท') {
+    } 
+    else if (eventText === 'อีเมล') {
         msg = {
             'type': 'text',
-            text:'akpack@hotmail.com'
+            text:'อีเมล์ของบริษัท\nakpack@hotmail.com'
 
         }
-    } else if (eventText === 'แฟกซ์ของบริษัท') {
+    } else if (eventText === 'แฟกซ์') {
         msg = {
             'type': 'text',
-            text:'028043351'
+            text:'แฟกซ์ของบริษัท\n028043351'
 
         }
     } else if (eventText === 'สวัสดีครับ') {
@@ -116,16 +117,16 @@ function handleMessageEvent(event) {
 
         }
     }
-    else if (eventText === 'Facebook ของบริษัท') {
+    else if (eventText === 'Facebook') {
         msg = {
             'type': 'text',
-            text: 'https://web.facebook.com/AK-Pack-and-Machinery-CoLtd-156593197861817/?hc_ref=ARTgW3JAvJwxE2lNLbF6W_oBTQXUC1soqCrIFfQCfCRoqcdLB7rnGXD1fJFFtDiSc8c&fref=nf&__xts__%5B0%5D=68.ARDbXcWfZYqoDgqf8gG9J2GCi1RQ1IIo5y4ifKGtJNbgYhfE7emTiCaXb-fqhd0SNP2jvqlVSqCwQPoO9bXmuhUkCjKfLlowITIgpGUARZKGYVVWXoAZMFsYY_rgq8hsxiUa_LT8CrzBv7SBp8_Y-v6DOpcIOAK1WsTugG1LZj-7xBwbTMx7bk6q5lpLw35ojaUroDs6T35a5XBfX7qXAEsTLLJbo7-dtv8SnvLbRtlJTsjcusy3xEJtjbRtalyOu-dbYG8GDkrpwg4pXDsX3sp-TeFJSC7atkYjkMKMMpbZo3RKnL8hRLxFKqe0fgqLYd7RSJbvuhknv99zqv7mJaQ&__tn__=kC-R&_rdc=1&_rdr',
+            text: 'Facebook ของบริษัท\nhttps://web.facebook.com/AK-Pack-and-Machinery-CoLtd-156593197861817/?hc_ref=ARTgW3JAvJwxE2lNLbF6W_oBTQXUC1soqCrIFfQCfCRoqcdLB7rnGXD1fJFFtDiSc8c&fref=nf&__xts__%5B0%5D=68.ARDbXcWfZYqoDgqf8gG9J2GCi1RQ1IIo5y4ifKGtJNbgYhfE7emTiCaXb-fqhd0SNP2jvqlVSqCwQPoO9bXmuhUkCjKfLlowITIgpGUARZKGYVVWXoAZMFsYY_rgq8hsxiUa_LT8CrzBv7SBp8_Y-v6DOpcIOAK1WsTugG1LZj-7xBwbTMx7bk6q5lpLw35ojaUroDs6T35a5XBfX7qXAEsTLLJbo7-dtv8SnvLbRtlJTsjcusy3xEJtjbRtalyOu-dbYG8GDkrpwg4pXDsX3sp-TeFJSC7atkYjkMKMMpbZo3RKnL8hRLxFKqe0fgqLYd7RSJbvuhknv99zqv7mJaQ&__tn__=kC-R&_rdc=1&_rdr',
 
         }
-    }else if (eventText === 'เว็บไซต์ของบริษัท') {
+    }else if (eventText === 'เว็บไซต์') {
         msg = {
             'type': 'text',
-            text: 'http://www.industry.co.th/t1/facility.php?uid=37053'
+            text: 'เว็บไซต์ของบริษัท\nhttp://www.industry.co.th/t1/facility.php?uid=37053'
 
         }
     }
@@ -169,7 +170,7 @@ function handleMessageEvent(event) {
         msg = {
             type: 'text',
             text: 'บอทสามารถตอบคำถามเกี่ยวกับ\n-ที่อยู่\n-เบอร์ติดต่อ\n-เบอร์ติดต่อการตลาด\n-อีเมล\n-เว็บไซต์'+
-            '\n-facebook\n-แฟกซ์\n-ติดต่อภายใน',
+            '\n-facebook\n-แฟกซ์',
         };
         if (eventText!== "hello, world" && eventText!== null) {
             db.all("INSERT INTO  question(question) VALUES(?)", [eventText], (err) => {
