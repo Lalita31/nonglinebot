@@ -69,16 +69,16 @@ function handleMessageEvent(event) {
             'type': 'text',
             text: 'ที่อยู่ของบริษัท\nถนนเพชรเกษม 68 แยก29 ถนนเพชรเกษม แขวงบางแคเหนือ เขตบางแค กรุงเทพมหานคร 10160'
         }
-    } else if (eventText === 'เบอร์ติดต่อบริษัท') {
+    } else if (eventText === 'เบอร์ติดต่อ') {
         // console.dir();
         msg = {
             'type': 'text',
             text: 'เบอร์ติดต่อบริษัท\n028043352-4'
         }
-    }  else if (eventText === 'ติดต่อฝ่ายการตลาด') {
+    }  else if (eventText === 'เบอร์ติดต่อการตลาด') {
         msg = {
             'type': 'text',
-            text: 'เบอร์ติดต่อฝ่ายการตลาด\n-0816479494 คุณติ๋ม'
+            text: 'เบอร์ติดต่อการตลาด\n-0816479494 คุณติ๋ม'
 
         }
     } 
@@ -169,8 +169,7 @@ function handleMessageEvent(event) {
         
         msg = {
             type: 'text',
-            text: 'บอทสามารถตอบคำถามเกี่ยวกับ\n-ที่อยู่\n-เบอร์ติดต่อ\n-เบอร์ติดต่อการตลาด\n-อีเมล\n-เว็บไซต์'+
-            '\n-facebook\n-แฟกซ์',
+            text: 'บอทสามารถตอบคำถามเกี่ยวกับ\n-ที่อยู่\n-เบอร์ติดต่อ\n-เบอร์ติดต่อการตลาด\n-อีเมล\n-แฟกซ์\n-Facebook\n-เว็บไซต์\nของบริษัท เอ.เค.แพคและจักรกล จำกัด'
         };
         if (eventText!== "hello, world" && eventText!== null) {
             db.all("INSERT INTO  question(question) VALUES(?)", [eventText], (err) => {
