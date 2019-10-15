@@ -8,24 +8,24 @@ const fund = require('./fund')
 const request = require('request')
 require('dotenv').config();
 const app = express();
-const sqlite3 = require("sqlite3").verbose();
-const db = new sqlite3.Database("./demo1.sqlite", err => {
-    console.log(err);
-})
-// console.log(MSG.data1)
-//console.log(address.MSG);
-
+const {clientDB} = require('./connect')
+const IDB = "INSERT INTO question (question) VALUES ($1)"
+const SDB = "select * from question"
 const data = {
     id: null
 }
 app.get('/data', (req, res) => {
-    db.all("SELECT * FROM question", [], (err, row) => {
-        // console.dir(row);
-        data.id = JSON.stringify(row)
-        row.map((item) => { console.dir(item) })
-    });
-    res.setHeader('Content-Type', 'application/json');
-  res.send(data.id)
+    let result = []
+    clientDB.query(SDB,(err, resDB) => {
+       resDBult.push(resDB.rows)
+       data.id=JSON.stringify(resDB.rows)
+       if (err) throw err;
+       for (let row of resDB.rows) {
+           
+         console.log(JSON.stringify(row));
+       }
+       console.log(`this is = ${result}`);
+     });
 })
 
 
@@ -133,11 +133,18 @@ function handleMessageEvent(event) {
     else if (eventText === 'report') {
 
 
-        db.all("SELECT * FROM question", [], (err, row) => {
-            // console.dir(row);
-            data.id = JSON.stringify(row)
-            // row.map((item) => { console.dir(item) })
-        });
+        let result = []
+        clientDB.query(SDB,(err, resDB) => {
+           
+           
+           if (err) throw err;
+           for (let row of resDB.rows) {
+            result.push(row)
+             console.log(JSON.stringify(row));
+           }
+           data.id=JSON.stringify(result)
+           console.log(`this is = ${result}`);
+         });
         request({
             method: 'POST',
             uri: 'https://notify-api.line.me/api/notify',
@@ -172,10 +179,13 @@ function handleMessageEvent(event) {
             text: 'บอทสามารถตอบคำถามเกี่ยวกับ\n-ที่อยู่\n-เบอร์ติดต่อ\n-เบอร์ติดต่อการตลาด\n-อีเมล\n-แฟกซ์\n-Facebook\n-เว็บไซต์\nของบริษัท เอ.เค.แพคและจักรกล จำกัด'
         };
         if (eventText!== "hello, world" && eventText!== null) {
-            db.all("INSERT INTO  question(question) VALUES(?)", [eventText], (err) => {
-                if(err) console.dir(err.message);
-    
-            });
+            clientDB.query(IDB,[eventText],(err, resDB) => {
+                if (err) throw err;
+                for (let row of resDB.rows) {
+                  console.log(JSON.stringify(row));
+                }
+              //  clientDB.end();
+              });
         }
       
     }
