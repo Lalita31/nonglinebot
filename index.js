@@ -25,6 +25,7 @@ app.get('/data', (req, res) => {
            
          console.log(JSON.stringify(row));
        }
+       res.status(200).json(result)
        console.log(`this is = ${result}`);
      });
 })
