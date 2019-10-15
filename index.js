@@ -1,10 +1,5 @@
 const express = require('express');
 const line = require('@line/bot-sdk');
-const address = require('./address')
-const query = require('./query')
-const capital = require('./capital')
-const withdraw = require('./withdraw')
-const fund = require('./fund')
 const request = require('request')
 require('dotenv').config();
 const app = express();
