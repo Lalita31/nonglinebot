@@ -14,10 +14,11 @@ const SDB = "select * from question"
 const data = {
     id: null
 }
+clientDB.connect()
 app.get('/data', (req, res) => {
     let result = []
     clientDB.query(SDB,(err, resDB) => {
-       resDBult.push(resDB.rows)
+       result.push(resDB.rows)
        data.id=JSON.stringify(resDB.rows)
        if (err) throw err;
        for (let row of resDB.rows) {
