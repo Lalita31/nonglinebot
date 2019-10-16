@@ -7,7 +7,8 @@ const {clientDB} = require('./connect')
 const IDB = "INSERT INTO question (question) VALUES ($1)"
 const SDB = "select * from question"
 const data = {
-    id: null
+    id: null,
+    del:null
 }
 clientDB.connect()
 app.get('/data', (req, res) => {
@@ -54,78 +55,83 @@ function handleEvent(event) {
 
 function handleMessageEvent(event) {
 
-    let msg = {
-        type: 'text',
-        text: 'dffd'
-    };
+  
 
     let eventText = event.message.text.toLowerCase();
 
     if (eventText === '5') {
-        msg = {
+       let msg = {
             'type': 'text',
             text: 'ที่อยู่ของบริษัท\nถนนเพชรเกษม 68 แยก29 ถนนเพชรเกษม แขวงบางแคเหนือ เขตบางแค กรุงเทพมหานคร 10160\nhttps://goo.gl/maps/udfaJQheXa7nHUFd8'
         }
+       return client.replyMessage(event.replyToken, msg);
+        
     } else if (eventText === '1') {
         // console.dir();
-        msg = {
+       let msg = {
             'type': 'text',
             text: 'เบอร์ติดต่อบริษัท\n028043352-4'
         }
+       return client.replyMessage(event.replyToken, msg);
     }  else if (eventText === '2') {
-        msg = {
+       let msg = {
             'type': 'text',
             text: 'เบอร์ติดต่อการตลาด\n0816479494 คุณติ๋ม'
-
         }
+       return client.replyMessage(event.replyToken, msg);
     } 
     else if (eventText === '6') {
-        msg = {
+       let msg = {
             'type': 'text',
             text:'อีเมล์ของบริษัท\nakpack@hotmail.com'
-
         }
+       return client.replyMessage(event.replyToken, msg);
     } else if (eventText === '7') {
-        msg = {
+       let msg = {
             'type': 'text',
             text:'แฟกซ์ของบริษัท\n028043351'
-
         }
+       return client.replyMessage(event.replyToken, msg);
     } else if (eventText === 'สวัสดีครับ') {
-        msg = {
+       let msg = {
             'type': 'text',
             text:'สวัสดี'
         }
+       return client.replyMessage(event.replyToken, msg);
     } else if (eventText === 'สวัสดีค่ะ') {
-        msg = {
+       let msg = {
             'type': 'text',
             text:'สวัสดี'
-
         }
+       return client.replyMessage(event.replyToken, msg);
     } else if (eventText === 'สวัสดี') {
-        msg = {
+       let msg = {
             'type': 'text',
             text:'สวัสดี'
         }
+       return client.replyMessage(event.replyToken, msg);
     } else if (eventText === '3') {
-        msg = {
+       let msg = {
             'type': 'text',
             text: 'ทางบริษัทรับผลิตถุงประเภท ดังนี้\n- ถุงซิป\n- ถุงไฮเดน\n- ถุง PE\n- ถุง PP'
 
         }
+       return client.replyMessage(event.replyToken, msg);
     }
     else if (eventText === '4') {
-        msg = {
+       let msg = {
             'type': 'text',
             text: 'ทางบริษัทรับยอดขั้นต่ำในการสั่งผลิตสินค้า เริ่มที่ 200 กิโลกรัม',
 
         }
+       return client.replyMessage(event.replyToken, msg);
     }else if (eventText === 'สินค้า') {
-        msg = {
+       let msg = {
             'type': 'text',
             text: 'รับผลิตถุงพลาสติก'
 
         }
+       return client.replyMessage(event.replyToken, msg);
     }
     else if (eventText === 'report') {
 
@@ -167,14 +173,86 @@ function handleMessageEvent(event) {
             'text':data.id
         }
         
-     } 
+     }  else if (eventText.replace(/\s+/g, '').slice(0,6)==="delete") { 
+   
+        let delparams = eventText.slice(6, eventText.length);
+      //  data.id=delparams
+         clientDB.query("DELETE FROM question WHERE id=$1", [delparams],  (err, resDB)=>{
+                if (err) throw err;
+         else{
+            if (resDB.rowCount) {
+                  data.del="Delete success"
+                  let msg = {
+                   type: "text",
+                   text: data.del
+                 };
+          
+                 request(
+                   {
+                     method: "POST",
+                     uri: "https://notify-api.line.me/api/notify",
+                     header: {
+                       "Content-Type": "application/x-www-form-urlencoded"
+                     },
+                     auth: {
+                       bearer: "KkD5Q5KrOjTl9BcwQBxBstj4qZpo8bu0Kk6q9bAPJqv" //token
+                     },
+                     form: {
+                       message: `this is eventext=${data.del}` //ข้อความที่จะส่ง
+                     }
+                   },
+                   (err, httpResponse, body) => {
+                     if (err) {
+                       console.log(err);
+                     } else {
+                       console.log(body);
+                     }
+                   }
+                 );
+                  return client.replyMessage(event.replyToken, msg);
+             }
+            else{
+                 data.del="Delete error"
+                 let msg = {
+                   type: "text",
+                   text: data.del
+                 };
+               
+                 request(
+                   {
+                     method: "POST",
+                     uri: "https://notify-api.line.me/api/notify",
+                     header: {
+                       "Content-Type": "application/x-www-form-urlencoded"
+                     },
+                     auth: {
+                       bearer: "KkD5Q5KrOjTl9BcwQBxBstj4qZpo8bu0Kk6q9bAPJqv" //token
+                     },
+                     form: {
+                       message: `this is eventext=${data.del}` //ข้อความที่จะส่ง
+                     }
+                   },
+                   (err, httpResponse, body) => {
+                     if (err) {
+                       console.log(err);
+                     } else {
+                       console.log(body);
+                     }
+                   }
+                 );
+                  return client.replyMessage(event.replyToken, msg);    
+             }
+        } 
+          });
+       }
    
     else {
         
-        msg = {
+       let msg = {
             type: 'text',
             text: 'บอทสามารถตอบคำถามเกี่ยวกับ\n1.เบอร์ติดต่อ\n2.ติดต่อฝ่ายการตลาด\n3.ประเภทของถุงพลาสติก\n4.ขั้นต่ำในการสั่งผลิต\n5.ที่อยู่\n6.อีเมล\n7.แฟกซ์\nของบริษัท เอ.เค.แพคและจักรกล จำกัด'
         };
+      
         if (eventText!== "hello, world" && eventText!== null) {
             clientDB.query(IDB,[eventText],(err, resDB) => {
                 if (err) throw err;
@@ -184,10 +262,10 @@ function handleMessageEvent(event) {
               //  clientDB.end();
               });
         }
-      
+        return client.replyMessage(event.replyToken, msg);
     }
 
-    return client.replyMessage(event.replyToken, msg);
+    
 }
 
 app.set('port', (process.env.PORT || 5000));
