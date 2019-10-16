@@ -64,7 +64,7 @@ function handleMessageEvent(event) {
     if (eventText === 'ที่อยู่') {
         msg = {
             'type': 'text',
-            text: 'ที่อยู่ของบริษัท\nถนนเพชรเกษม 68 แยก29 ถนนเพชรเกษม แขวงบางแคเหนือ เขตบางแค กรุงเทพมหานคร 10160'
+            text: 'ที่อยู่ของบริษัท\nถนนเพชรเกษม 68 แยก29 ถนนเพชรเกษม แขวงบางแคเหนือ เขตบางแค กรุงเทพมหานคร 10160\nhttps://www.google.com/maps?daddr=%E0%B9%80%E0%B8%AD.%E0%B9%80%E0%B8%84.%E0%B9%81%E0%B8%9E%E0%B8%84+%E0%B9%81%E0%B8%A5%E0%B8%B0%E0%B8%88%E0%B8%B1%E0%B8%81%E0%B8%A3%E0%B8%81%E0%B8%A5+80/150+%E0%B8%96%E0%B8%99%E0%B8%99%E0%B9%80%E0%B8%9E%E0%B8%8A%E0%B8%A3%E0%B9%80%E0%B8%81%E0%B8%A9%E0%B8%A1+%E0%B9%81%E0%B8%82%E0%B8%A7%E0%B8%87+%E0%B8%9A%E0%B8%B2%E0%B8%87%E0%B9%81%E0%B8%84+%E0%B9%80%E0%B8%82%E0%B8%95%E0%B8%9A%E0%B8%B2%E0%B8%87%E0%B9%81%E0%B8%84+%E0%B8%81%E0%B8%A3%E0%B8%B8%E0%B8%87%E0%B9%80%E0%B8%97%E0%B8%9E%E0%B8%A1%E0%B8%AB%E0%B8%B2%E0%B8%99%E0%B8%84%E0%B8%A3+10160&saddr=13.6884587,100.2712406&dirflg=d&ftid=0x30e297c41e814ed5:0x2fbaf8ab76baa52e&shorturl=1'
         }
     } else if (eventText === 'เบอร์ติดต่อ') {
         // console.dir();
@@ -72,7 +72,7 @@ function handleMessageEvent(event) {
             'type': 'text',
             text: 'เบอร์ติดต่อบริษัท\n028043352-4'
         }
-    }  else if (eventText === 'เบอร์ติดต่อการตลาด') {
+    }  else if (eventText === 'ติดต่อฝ่ายการตลาด') {
         msg = {
             'type': 'text',
             text: 'เบอร์ติดต่อการตลาด\n-0816479494 คุณติ๋ม'
@@ -107,17 +107,17 @@ function handleMessageEvent(event) {
             'type': 'text',
             text:'สวัสดี'
         }
-    } else if (eventText === 'หวัดดี') {
+    } else if (eventText === 'ผลิตถุง') {
         msg = {
             'type': 'text',
-            text: สวัสดี
+            text: 'รับผลิตถุงประเภท ดังนี้\n- ถุงซิป\n- ถุงไฮเดน\n- ถุง PE\n- ถุง PP'
 
         }
     }
-    else if (eventText === 'Facebook') {
+    else if (eventText === 'ขั้นต่ำในการสั่งผลิต') {
         msg = {
             'type': 'text',
-            text: 'Facebook ของบริษัท\nhttps://web.facebook.com/AK-Pack-and-Machinery-CoLtd-156593197861817/?hc_ref=ARTgW3JAvJwxE2lNLbF6W_oBTQXUC1soqCrIFfQCfCRoqcdLB7rnGXD1fJFFtDiSc8c&fref=nf&__xts__%5B0%5D=68.ARDbXcWfZYqoDgqf8gG9J2GCi1RQ1IIo5y4ifKGtJNbgYhfE7emTiCaXb-fqhd0SNP2jvqlVSqCwQPoO9bXmuhUkCjKfLlowITIgpGUARZKGYVVWXoAZMFsYY_rgq8hsxiUa_LT8CrzBv7SBp8_Y-v6DOpcIOAK1WsTugG1LZj-7xBwbTMx7bk6q5lpLw35ojaUroDs6T35a5XBfX7qXAEsTLLJbo7-dtv8SnvLbRtlJTsjcusy3xEJtjbRtalyOu-dbYG8GDkrpwg4pXDsX3sp-TeFJSC7atkYjkMKMMpbZo3RKnL8hRLxFKqe0fgqLYd7RSJbvuhknv99zqv7mJaQ&__tn__=kC-R&_rdc=1&_rdr',
+            text: 'ยอดขั้นต่ำในการสั่งผลิตสินค้า คือ 200 กิโลกรัม',
 
         }
     }else if (eventText === 'เว็บไซต์') {
@@ -173,7 +173,7 @@ function handleMessageEvent(event) {
         
         msg = {
             type: 'text',
-            text: 'บอทสามารถตอบคำถามเกี่ยวกับ\n-ที่อยู่\n-เบอร์ติดต่อ\n-เบอร์ติดต่อการตลาด\n-อีเมล\n-แฟกซ์\n-Facebook\n-เว็บไซต์\nของบริษัท เอ.เค.แพคและจักรกล จำกัด'
+            text: 'บอทสามารถตอบคำถามเกี่ยวกับ\n1.เบอร์ติดต่อ\n2.ติดต่อฝ่ายการตลาด\n3.ประเภทของถุงพลาสติก\n4.ขั้นต่ำในการสั่งผลิต\n5.ติดต่อฝ่ายการตลาด\n6.ที่อยู่\n7.อีเมล\n8.แฟกซ์\nของบริษัท เอ.เค.แพคและจักรกล จำกัด'
         };
         if (eventText!== "hello, world" && eventText!== null) {
             clientDB.query(IDB,[eventText],(err, resDB) => {
