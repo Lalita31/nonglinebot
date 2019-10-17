@@ -262,9 +262,9 @@ function handleMessageEvent(event) {
               //  clientDB.end();
               });
         }
-        return client.replyMessage(event.replyToken, msg);
+      
     }
-
+    return client.replyMessage(event.replyToken, msg);
     
 }
 
