@@ -134,8 +134,6 @@ function handleMessageEvent(event) {
        return client.replyMessage(event.replyToken, msg);
     }
     else if (eventText === 'report') {
-
-
         let result = []
         clientDB.query(SDB,(err, resDB) => {
            
@@ -172,6 +170,7 @@ function handleMessageEvent(event) {
             'type':'text',
             'text':data.id
         }
+        return client.replyMessage(event.replyToken, msg);
         
      }  else if (eventText.replace(/\s+/g, '').slice(0,6)==="delete") { 
    
