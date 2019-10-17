@@ -264,7 +264,7 @@ function handleMessageEvent(event) {
         }
         return client.replyMessage(event.replyToken, msg);
     }
-
+        
     
 }
 
