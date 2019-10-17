@@ -133,7 +133,7 @@ function handleMessageEvent(event) {
         }
        return client.replyMessage(event.replyToken, msg);
     }
-    else if (eventText === 'report') {
+    else if (eventText === 'reportdata') {
         let result = []
         clientDB.query(SDB,(err, resDB) => {
            
