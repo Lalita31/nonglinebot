@@ -145,6 +145,11 @@ function handleMessageEvent(event) {
            }
            data.id=JSON.stringify(result)
            console.log(`this is = ${result}`);
+           let msg={
+            'type':'text',
+            'text':data.id
+        }
+        return client.replyMessage(event.replyToken, msg);
          });
         request({
             method: 'POST',
@@ -166,11 +171,7 @@ function handleMessageEvent(event) {
             }
         })
 
-        msg={
-            'type':'text',
-            'text':data.id
-        }
-        return client.replyMessage(event.replyToken, msg);
+      
         
      }  else if (eventText.replace(/\s+/g, '').slice(0,6)==="delete") { 
    
