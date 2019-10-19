@@ -10,6 +10,8 @@ const data = {
     id: null,
     del:null
 }
+const cors = require ("cors")
+app.use (cors())
 clientDB.connect()
 app.get('/data', (req, res) => {
     let result = []
