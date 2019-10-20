@@ -1,7 +1,8 @@
 const express = require('express');
 const line = require('@line/bot-sdk');
 const request = require('request')
-const bodyParser = require ('body-parser')
+const bodyParser = require ('body-parser')\
+const cors = require ("cors")
 require('dotenv').config();
 const app = express();
 app.use(cors())
@@ -16,8 +17,7 @@ const data = {
     id: null,
     del:null
 }
-const cors = require ("cors")
-app.use (cors())
+
 clientDB.connect()
 app.get('/data', (req, res) => {
     let result = []
@@ -59,8 +59,8 @@ app.post("/delete", (req, res) => {
 
 
 const config = {
-    channelAccessToken: 'i+FQrA9/mWO212NxzaPCsdzhANqlJlVa3luE2wWRjTMhcm+B/QYI0z/9Lv9HtZTH57Lkt2GF+N+xxuMTpYOm0LC4EXxFo2NxYNoaxOlAMSaAWyg+JVRY89/Oa2kAnptmVWxgWkukmYaF2jDSovrWzQdB04t89/1O/w1cDnyilFU=    ',
-    channelSecret: '80ac4bb8bcb9d792e0c964af438170a1'
+    channelAccessToken:'i+FQrA9/mWO212NxzaPCsdzhANqlJlVa3luE2wWRjTMhcm+B/QYI0z/9Lv9HtZTH57Lkt2GF+N+xxuMTpYOm0LC4EXxFo2NxYNoaxOlAMSaAWyg+JVRY89/Oa2kAnptmVWxgWkukmYaF2jDSovrWzQdB04t89/1O/w1cDnyilFU=    ',
+    channelSecret:'80ac4bb8bcb9d792e0c964af438170a1'
 };
 
 const client = new line.Client(config);
