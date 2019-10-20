@@ -3,6 +3,11 @@ const line = require('@line/bot-sdk');
 const request = require('request')
 require('dotenv').config();
 const app = express();
+app.use(cors())
+
+app.use(bodyParser.urlencoded({
+  extended: true
+}))
 const {clientDB} = require('./connect')
 const IDB = "INSERT INTO question (question) VALUES ($1)"
 const SDB = "select * from question"
@@ -27,7 +32,27 @@ app.get('/data', (req, res) => {
        console.log(`this is = ${result}`);
      });
 })
-
+app.post("/delete", (req, res) => {
+   
+  // console.log('====================================');
+  // //console.log(`this value =${delparams}`);
+  // console.log('====================================');
+  clientDB.query(`DELETE FROM question WHERE id in (${req.body.data})`, (err, resDB) => {
+    if (err) throw err;
+    else{
+        if (resDB.rowCount) {
+            res.send(`Delete success`);
+        }
+        else{
+                res.send(JSON.stringify(resDB))
+        }
+    }
+    
+   
+  });
+  
+  
+});
 
 
 
