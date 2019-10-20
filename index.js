@@ -12,7 +12,7 @@ app.use(bodyParser.urlencoded({
 }))
 const {clientDB} = require('./connect')
 const IDB = "INSERT INTO question (question) VALUES ($1)"
-const SDB = "select * from question"
+const SDB = "select * from question order by id ASC" 
 const data = {
     id: null,
     del:null
