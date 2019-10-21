@@ -54,6 +54,22 @@ app.post("/delete", (req, res) => {
   
   
 });
+app.delete('/del', (req, res) => {
+  console.log(req.query.id);
+  clientDB.query(`DELETE FROM question WHERE id=(${req.query.id})`, (err, resDB) => {
+    if (err) throw err;
+    else{
+        if (resDB.rowCount) {
+            res.send(`Delete success`);
+        }
+        else{
+                res.send(JSON.stringify(resDB))
+        }
+    }
+    
+   
+  });
+})
 
 
 
